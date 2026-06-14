@@ -3,13 +3,401 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PostEx Office Near Me - Pakistan Service Cities, Contact & Location Help</title>
-  <meta name="description" content="Find PostEx office near me information by Pakistani city, including service help, contact tips, and city-wise location cards for parcel tracking support.">
+  <title>PostEx Office Near Me - Find PostEx Offices & Support in Pakistan</title>
+  <meta name="description" content="Find PostEx office near me in Pakistan. Learn how to locate nearby PostEx branches, contact support, track parcels, and solve delivery issues easily.">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://your-domain.com/postex-office-near-me.html">
   <link rel="stylesheet" href="/assets/styles.css">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How can I find a PostEx office near me?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Open Google Maps and search PostEx near me. You can also search with your city name, such as PostEx office Lahore, PostEx office Karachi, or PostEx office Islamabad."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to visit a PostEx office to track my parcel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. You can track your parcel online with your PostEx tracking number. Visit an office only if your issue is not solved online or through support."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I take to a PostEx office?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Keep your tracking number, order number, phone number, seller name, and delivery address with you. This helps support find your parcel faster."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can PostEx help with delayed parcels?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, PostEx support may help with delayed parcels. First check your tracking number online, then contact the seller or PostEx support if there is no update for many working days."
+          }
+        }
+      ]
+    }
+  </script>
+
+  <style>
+    .office-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 72px 20px 54px;
+      background:
+        radial-gradient(circle at top left, rgba(126, 211, 33, .22), transparent 34%),
+        linear-gradient(135deg, #0e160b 0%, #193012 56%, #0f1f0d 100%);
+      color: #fff;
+    }
+
+    .office-hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -80px -160px auto;
+      width: 360px;
+      height: 360px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      filter: blur(2px);
+    }
+
+    .office-hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr);
+      gap: 28px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .office-hero h1 {
+      margin: 12px 0 14px;
+      max-width: 760px;
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: 1.04;
+      letter-spacing: -1.8px;
+      color: #fff;
+    }
+
+    .office-hero .lead {
+      color: rgba(255,255,255,.84);
+      max-width: 720px;
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    .office-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .office-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      background: #9cff57;
+      color: #10200c;
+      box-shadow: 0 16px 36px rgba(156,255,87,.18);
+    }
+
+    .office-action.secondary {
+      background: rgba(255,255,255,.11);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.22);
+      box-shadow: none;
+    }
+
+    .hero-help-card {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 28px;
+      padding: 24px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 24px 70px rgba(0,0,0,.22);
+    }
+
+    .hero-help-card h2 {
+      color: #fff;
+      margin: 0 0 12px;
+      font-size: 24px;
+    }
+
+    .hero-help-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .hero-help-card li {
+      display: flex;
+      gap: 10px;
+      color: rgba(255,255,255,.86);
+      line-height: 1.5;
+    }
+
+    .hero-help-card li::before {
+      content: "✓";
+      display: grid;
+      place-items: center;
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+      border-radius: 999px;
+      background: #9cff57;
+      color: #10200c;
+      font-weight: 900;
+      font-size: 13px;
+    }
+
+    .office-search-card {
+      max-width: 1120px;
+      margin: -28px auto 0;
+      position: relative;
+      z-index: 2;
+      padding: 0 20px;
+    }
+
+    .office-search-inner {
+      background: #fff;
+      border: 1px solid rgba(14, 22, 11, .08);
+      border-radius: 24px;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      box-shadow: 0 22px 60px rgba(14,22,11,.12);
+    }
+
+    .office-search-inner input {
+      width: 100%;
+      border: 1px solid rgba(14,22,11,.12);
+      background: #f7faf5;
+      border-radius: 16px;
+      padding: 16px 18px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .office-search-inner input:focus {
+      border-color: #6fbf2d;
+      box-shadow: 0 0 0 4px rgba(111,191,45,.12);
+    }
+
+    .office-search-inner .search-note {
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      border-radius: 16px;
+      background: #eef8e8;
+      color: #23451a;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .office-grid.improved {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .office-card.v2 {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(14,22,11,.08);
+      border-radius: 24px;
+      padding: 22px;
+      background:
+        linear-gradient(#fff, #fff) padding-box,
+        linear-gradient(135deg, rgba(156,255,87,.7), rgba(14,22,11,.08)) border-box;
+      box-shadow: 0 18px 45px rgba(14,22,11,.08);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .office-card.v2:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 26px 60px rgba(14,22,11,.14);
+    }
+
+    .office-card.v2::before {
+      content: "";
+      position: absolute;
+      top: -70px;
+      right: -70px;
+      width: 150px;
+      height: 150px;
+      border-radius: 999px;
+      background: rgba(156,255,87,.18);
+    }
+
+    .city-row {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .city-row .city {
+      font-size: 24px;
+      font-weight: 900;
+      color: #0e160b;
+      letter-spacing: -.5px;
+    }
+
+    .city-badge {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: #eef8e8;
+      color: #23451a;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .4px;
+      white-space: nowrap;
+    }
+
+    .office-card.v2 p {
+      position: relative;
+      z-index: 1;
+      color: #4b5b45;
+      line-height: 1.65;
+      margin: 0 0 16px;
+    }
+
+    .office-meta {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px dashed rgba(14,22,11,.14);
+    }
+
+    .office-meta span {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      color: #263620;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .office-meta b {
+      color: #0e160b;
+    }
+
+    .office-card-link {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      margin-top: 16px;
+      color: #1b7d12;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .office-info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .info-tile {
+      background: #fff;
+      border: 1px solid rgba(14,22,11,.08);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 14px 38px rgba(14,22,11,.06);
+    }
+
+    .info-tile .icon {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: #eef8e8;
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .content-body.near-me article h2 {
+      margin-top: 30px;
+    }
+
+    .near-me-checklist {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      padding: 0;
+      margin: 18px 0;
+      list-style: none;
+    }
+
+    .near-me-checklist li {
+      border: 1px solid rgba(14,22,11,.08);
+      background: #fff;
+      border-radius: 16px;
+      padding: 14px 15px;
+      color: #32462c;
+      box-shadow: 0 10px 26px rgba(14,22,11,.05);
+    }
+
+    .near-me-checklist li::before {
+      content: "✓ ";
+      color: #3a9f20;
+      font-weight: 900;
+    }
+
+    @media (max-width: 900px) {
+      .office-hero-inner,
+      .office-grid.improved,
+      .office-info-grid,
+      .near-me-checklist {
+        grid-template-columns: 1fr;
+      }
+
+      .office-search-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .office-search-inner .search-note {
+        justify-content: center;
+        min-height: 46px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="top-strip">Find PostEx city coverage and support help across Pakistan.</div>
+  <div class="top-strip">Find PostEx city coverage, nearby office help, parcel support, and tracking guidance across Pakistan.</div>
+
   <header class="site-header">
     <nav class="nav" aria-label="Primary navigation">
       <a class="brand" href="/"><span class="brand-mark">P</span><span>PostEx Tracking</span></a>
@@ -22,38 +410,328 @@
       </div>
     </nav>
   </header>
+
   <main>
-    <section class="section">
-      <span class="section-kicker">PostEx Office Near Me</span>
-      <h1 style="color:#0e160b">PostEx office near me in Pakistan</h1>
-      <p class="lead">Search your city to find PostEx service coverage guidance. For exact branch address, rider coordination, complaint escalation, or current office timing, confirm through official PostEx support because courier office locations can change.</p>
-      <div class="office-search">
-        <input data-office-search placeholder="Search city e.g. Lahore, Karachi, Islamabad" aria-label="Search PostEx office city">
-      </div>
-      <div class="office-grid">
-        <article class="card office-card" data-office-card><div class="city">Lahore</div><p>Main ecommerce logistics hub for Punjab. Use tracking number for parcel status, return, and delivery coordination.</p><strong>Contact:</strong> Official PostEx helpline / seller support panel</article>
-        <article class="card office-card" data-office-card><div class="city">Karachi</div><p>Major Sindh delivery and pickup city for COD parcels, online stores, and marketplace shipments.</p><strong>Contact:</strong> Official PostEx helpline / seller support panel</article>
-        <article class="card office-card" data-office-card><div class="city">Islamabad</div><p>Federal capital coverage for parcel delivery, ecommerce orders, and customer delivery updates.</p><strong>Contact:</strong> Official PostEx helpline / seller support panel</article>
-        <article class="card office-card" data-office-card><div class="city">Rawalpindi</div><p>Twin-city delivery support area for shipment movement, customer calls, and final-mile delivery.</p><strong>Contact:</strong> Official PostEx helpline / seller support panel</article>
-        <article class="card office-card" data-office-card><div class="city">Faisalabad</div><p>Industrial and ecommerce city coverage for COD orders and seller parcel dispatch.</p><strong>Contact:</strong> Official PostEx helpline / seller support panel</article>
-        <article class="card office-card" data-office-card><div class="city">Multan</div><p>South Punjab service area for parcel movement, delivery attempts, and return shipments.</p><strong>Contact:</strong> Official PostEx helpline / seller support panel</article>
-        <article class="card office-card" data-office-card><div class="city">Gujranwala</div><p>Punjab delivery city for online orders, merchant pickups, and customer tracking queries.</p><strong>Contact:</strong> Official PostEx helpline / seller support panel</article>
-        <article class="card office-card" data-office-card><div class="city">Sialkot</div><p>Business and ecommerce parcel coverage for domestic shipments and COD delivery.</p><strong>Contact:</strong> Official PostEx helpline / seller support panel</article>
-        <article class="card office-card" data-office-card><div class="city">Peshawar</div><p>Khyber Pakhtunkhwa service city for tracking updates and parcel delivery coordination.</p><strong>Contact:</strong> Official PostEx helpline / seller support panel</article>
-        <article class="card office-card" data-office-card><div class="city">Quetta</div><p>Balochistan service coverage depends on route availability and operational schedules.</p><strong>Contact:</strong> Official PostEx helpline / seller support panel</article>
-        <article class="card office-card" data-office-card><div class="city">Hyderabad</div><p>Sindh parcel delivery city for ecommerce shipments and COD order tracking.</p><strong>Contact:</strong> Official PostEx helpline / seller support panel</article>
-        <article class="card office-card" data-office-card><div class="city">Bahawalpur</div><p>South Punjab delivery coverage for online orders, returns, and shipment support.</p><strong>Contact:</strong> Official PostEx helpline / seller support panel</article>
+    <section class="office-hero">
+      <div class="office-hero-inner">
+        <div>
+          <span class="eyebrow">PostEx Office Near Me</span>
+          <h1>Find PostEx offices and delivery support near you.</h1>
+          <p class="lead">Looking for a PostEx office near me? Use this page to search city-wise PostEx service help, understand when to visit an office, and check your parcel before contacting support.</p>
+          <div class="office-actions">
+            <a class="office-action" href="/">Track PostEx Parcel</a>
+            <a class="office-action secondary" href="/postex-tracking-status.html">Read Status Guide</a>
+          </div>
+        </div>
+        <aside class="hero-help-card">
+          <h2>Before visiting</h2>
+          <ul>
+            <li>Keep your PostEx tracking number ready.</li>
+            <li>Check your latest parcel status online first.</li>
+            <li>Contact the seller if the parcel was booked by an online store.</li>
+            <li>Verify exact office timing through official support.</li>
+          </ul>
+        </aside>
       </div>
     </section>
-    <section class="content-band">
-      <div class="section">
-        <h2>How to find the nearest PostEx office safely</h2>
-        <p>Courier branches, pickup points, and operational hubs can change because companies shift routes, merge service points, or update city coverage. The safest way to confirm a PostEx office near you is to keep your consignment number ready, check the latest status on the tracking page, and contact official PostEx support or the seller who booked the parcel. If you are a merchant, the seller dashboard or account manager is usually the fastest route for pickup and return questions.</p>
-        <p>For customers, most parcel issues do not require visiting an office. Track the shipment first, confirm whether it is received, in transit, enroute for delivery, waiting for delivery, delivered, or returned, and then contact support with the exact tracking number. This page is internally linked with the <a class="mini-link" href="/">PostEx tracking tool</a>, <a class="mini-link" href="/postex-tracking-status.html">status guide</a>, and <a class="mini-link" href="/postex-cod-tracking.html">COD tracking guide</a> so you can move from location intent to parcel intent quickly.</p>
+
+    <section class="office-search-card" aria-label="Search city">
+      <div class="office-search-inner">
+        <input data-office-search placeholder="Search city e.g. Lahore, Karachi, Islamabad" aria-label="Search PostEx office city">
+        <div class="search-note">City-wise office help</div>
       </div>
+    </section>
+
+    <section class="section">
+      <span class="section-kicker">City Search</span>
+      <h2>PostEx office near me by city</h2>
+      <p class="lead">Search your city below to find PostEx service coverage guidance. For exact branch address, rider coordination, complaint help, or current office timing, confirm through official PostEx support because courier locations can change.</p>
+
+      <div class="office-grid improved">
+        <article class="card office-card v2" data-office-card>
+          <div class="city-row"><div class="city">Lahore</div><span class="city-badge">Punjab Hub</span></div>
+          <p>Main ecommerce logistics city for Punjab. Useful for COD parcels, seller pickups, returns, and delivery support.</p>
+          <div class="office-meta">
+            <span>📦 <b>Best for:</b> parcel status, returns, pickup, delivery complaint</span>
+            <span>☎️ <b>Contact:</b> official PostEx helpline or seller support panel</span>
+          </div>
+          <a class="office-card-link" href="/">Track parcel first →</a>
+        </article>
+
+        <article class="card office-card v2" data-office-card>
+          <div class="city-row"><div class="city">Karachi</div><span class="city-badge">Sindh Hub</span></div>
+          <p>Major delivery and pickup city for COD parcels, online stores, marketplaces, and business shipments.</p>
+          <div class="office-meta">
+            <span>📦 <b>Best for:</b> COD delivery, marketplace orders, shipment movement</span>
+            <span>☎️ <b>Contact:</b> official PostEx helpline or seller support panel</span>
+          </div>
+          <a class="office-card-link" href="/postex-cod-tracking.html">COD tracking help →</a>
+        </article>
+
+        <article class="card office-card v2" data-office-card>
+          <div class="city-row"><div class="city">Islamabad</div><span class="city-badge">Capital</span></div>
+          <p>Federal capital coverage for parcel delivery, ecommerce orders, customer calls, and delivery updates.</p>
+          <div class="office-meta">
+            <span>📦 <b>Best for:</b> parcel delivery, tracking support, rider coordination</span>
+            <span>☎️ <b>Contact:</b> official PostEx helpline or seller support panel</span>
+          </div>
+          <a class="office-card-link" href="/postex-tracking-status.html">Understand status →</a>
+        </article>
+
+        <article class="card office-card v2" data-office-card>
+          <div class="city-row"><div class="city">Rawalpindi</div><span class="city-badge">Twin City</span></div>
+          <p>Twin-city delivery area for shipment movement, final-mile delivery, customer calls, and parcel support.</p>
+          <div class="office-meta">
+            <span>📦 <b>Best for:</b> final-mile delivery, delayed order help, address issue</span>
+            <span>☎️ <b>Contact:</b> official PostEx helpline or seller support panel</span>
+          </div>
+          <a class="office-card-link" href="/">Track parcel first →</a>
+        </article>
+
+        <article class="card office-card v2" data-office-card>
+          <div class="city-row"><div class="city">Faisalabad</div><span class="city-badge">Ecommerce</span></div>
+          <p>Industrial and ecommerce city coverage for COD orders, seller parcel dispatch, and delivery support.</p>
+          <div class="office-meta">
+            <span>📦 <b>Best for:</b> seller dispatch, COD parcels, returns</span>
+            <span>☎️ <b>Contact:</b> official PostEx helpline or seller support panel</span>
+          </div>
+          <a class="office-card-link" href="/postex-cod-tracking.html">COD tracking help →</a>
+        </article>
+
+        <article class="card office-card v2" data-office-card>
+          <div class="city-row"><div class="city">Multan</div><span class="city-badge">South Punjab</span></div>
+          <p>South Punjab service area for parcel movement, delivery attempts, return shipments, and customer help.</p>
+          <div class="office-meta">
+            <span>📦 <b>Best for:</b> intercity parcel, return update, shipment delay</span>
+            <span>☎️ <b>Contact:</b> official PostEx helpline or seller support panel</span>
+          </div>
+          <a class="office-card-link" href="/postex-tracking-status.html">Check status meaning →</a>
+        </article>
+
+        <article class="card office-card v2" data-office-card>
+          <div class="city-row"><div class="city">Gujranwala</div><span class="city-badge">Punjab</span></div>
+          <p>Punjab delivery city for online orders, merchant pickups, customer tracking queries, and COD parcels.</p>
+          <div class="office-meta">
+            <span>📦 <b>Best for:</b> customer tracking, merchant pickup, delivery query</span>
+            <span>☎️ <b>Contact:</b> official PostEx helpline or seller support panel</span>
+          </div>
+          <a class="office-card-link" href="/">Track parcel first →</a>
+        </article>
+
+        <article class="card office-card v2" data-office-card>
+          <div class="city-row"><div class="city">Sialkot</div><span class="city-badge">Business</span></div>
+          <p>Business and ecommerce parcel coverage for domestic shipments, COD delivery, and returns.</p>
+          <div class="office-meta">
+            <span>📦 <b>Best for:</b> business parcels, COD orders, delivery coordination</span>
+            <span>☎️ <b>Contact:</b> official PostEx helpline or seller support panel</span>
+          </div>
+          <a class="office-card-link" href="/postex-shipping-guide.html">Shipping guide →</a>
+        </article>
+
+        <article class="card office-card v2" data-office-card>
+          <div class="city-row"><div class="city">Peshawar</div><span class="city-badge">KPK</span></div>
+          <p>Khyber Pakhtunkhwa service city for tracking updates, parcel movement, and delivery coordination.</p>
+          <div class="office-meta">
+            <span>📦 <b>Best for:</b> tracking update, city route, parcel delay</span>
+            <span>☎️ <b>Contact:</b> official PostEx helpline or seller support panel</span>
+          </div>
+          <a class="office-card-link" href="/postex-tracking-status.html">Status guide →</a>
+        </article>
+
+        <article class="card office-card v2" data-office-card>
+          <div class="city-row"><div class="city">Quetta</div><span class="city-badge">Balochistan</span></div>
+          <p>Balochistan service coverage can depend on route availability, city schedule, and operational timing.</p>
+          <div class="office-meta">
+            <span>📦 <b>Best for:</b> route confirmation, intercity delivery, delay help</span>
+            <span>☎️ <b>Contact:</b> official PostEx helpline or seller support panel</span>
+          </div>
+          <a class="office-card-link" href="/">Track parcel first →</a>
+        </article>
+
+        <article class="card office-card v2" data-office-card>
+          <div class="city-row"><div class="city">Hyderabad</div><span class="city-badge">Sindh</span></div>
+          <p>Sindh parcel delivery city for ecommerce shipments, COD order tracking, and customer support.</p>
+          <div class="office-meta">
+            <span>📦 <b>Best for:</b> ecommerce parcel, COD delivery, tracking support</span>
+            <span>☎️ <b>Contact:</b> official PostEx helpline or seller support panel</span>
+          </div>
+          <a class="office-card-link" href="/postex-cod-tracking.html">COD tracking help →</a>
+        </article>
+
+        <article class="card office-card v2" data-office-card>
+          <div class="city-row"><div class="city">Bahawalpur</div><span class="city-badge">South Punjab</span></div>
+          <p>South Punjab delivery coverage for online orders, returns, shipment support, and parcel status help.</p>
+          <div class="office-meta">
+            <span>📦 <b>Best for:</b> returns, delayed shipment, order support</span>
+            <span>☎️ <b>Contact:</b> official PostEx helpline or seller support panel</span>
+          </div>
+          <a class="office-card-link" href="/postex-tracking-status.html">Check status meaning →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section tight">
+      <span class="section-kicker">Quick Help</span>
+      <h2>What do you need from PostEx?</h2>
+      <div class="office-info-grid">
+        <article class="info-tile">
+          <div class="icon">📍</div>
+          <h3>Find an office</h3>
+          <p>Search “PostEx near me” on Google Maps or search your city name to find nearby courier help.</p>
+        </article>
+        <article class="info-tile">
+          <div class="icon">📦</div>
+          <h3>Track a parcel</h3>
+          <p>Use your tracking number on the <a class="mini-link" href="/">PostEx tracking tool</a> before visiting any office.</p>
+        </article>
+        <article class="info-tile">
+          <div class="icon">☎️</div>
+          <h3>Contact support</h3>
+          <p>For delivery complaints, keep your consignment number, phone number, and order details ready.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-band">
+      <div class="section content-body near-me">
+        <article>
+          <span class="section-kicker">Complete Guide</span>
+          <h2>PostEx Near Me: Find PostEx Offices and Service Points in Pakistan</h2>
+          <p>Looking for a PostEx office near me? Many people search for the nearest PostEx branch when they want to send a parcel, ask about a late order, return a package, or get help with delivery.</p>
+          <p>PostEx is used by many online stores, Instagram sellers, and ecommerce businesses in Pakistan. If your parcel is sent through PostEx, you may need a nearby office or support point for quick help.</p>
+
+          <h2>What is PostEx near me?</h2>
+          <p>“PostEx near me” means finding the closest PostEx office, hub, or service point in your city. People usually search this when they need help with a parcel or want to visit a courier office.</p>
+          <p>You may search for PostEx office near me, PostEx branch near me, PostEx courier near me, PostEx office in Lahore, PostEx office in Karachi, PostEx office in Islamabad, PostEx contact number near me, or PostEx delivery office near me.</p>
+          <p>Before going to any office, it is better to check your parcel status first. You can use our <a class="mini-link" href="/">PostEx tracking tool</a> to check your latest shipment update online.</p>
+
+          <h2>How to find a PostEx office near you</h2>
+          <p>You can find the nearest PostEx office in a few easy ways.</p>
+
+          <h3>1. Search on Google Maps</h3>
+          <p>Open Google Maps and type “PostEx near me”. Google Maps may show nearby PostEx offices, courier hubs, or delivery points. You can also search with your city name, like PostEx office Lahore, PostEx office Karachi, PostEx office Islamabad, PostEx office Faisalabad, or PostEx office Rawalpindi.</p>
+          <p>Always check the latest opening time, address, and phone number before visiting.</p>
+
+          <h3>2. Check the official PostEx website</h3>
+          <p>You can visit the official PostEx website and use their contact or support page for help. If your parcel is delayed or your tracking is not updating, support can guide you better.</p>
+          <p>For parcel updates, you can also read our <a class="mini-link" href="/postex-tracking-status.html">PostEx tracking status guide</a>.</p>
+
+          <h3>3. Contact the seller first</h3>
+          <p>If you ordered from an online store, contact the seller before visiting a PostEx office. Many times the seller has more details about your order.</p>
+          <p>Ask the seller for your PostEx tracking number, booking date, parcel status, rider update, return reason, or delivery issue. If you do not have your tracking number, you may not get proper help from the courier office.</p>
+
+          <h3>4. Use a courier tracking tool</h3>
+          <p>Before searching for a PostEx branch near me, check your parcel online. This saves time and helps you understand if the parcel is booked, picked up, in transit, out for delivery, delivered, or returned.</p>
+
+          <h2>When should you visit a PostEx office?</h2>
+          <p>You may need to visit or contact a PostEx office in these cases:</p>
+          <ul class="near-me-checklist">
+            <li>Your parcel is stuck for many days</li>
+            <li>Your parcel shows “On Hold”</li>
+            <li>Your parcel shows “Returned to Shipper”</li>
+            <li>Your rider did not call you</li>
+            <li>Your address needs correction</li>
+            <li>You want help with COD delivery</li>
+            <li>You are a seller and need pickup help</li>
+            <li>You want to ask about return shipment</li>
+          </ul>
+          <p>If your parcel is only “In Transit” for one day, you may not need to visit an office. This is normal for many intercity parcels.</p>
+
+          <h2>Services you can ask at a PostEx office</h2>
+          <p>A PostEx office or support team may help with parcel delivery updates, shipment tracking help, COD parcel support, return parcel information, pickup support for sellers, delivery complaints, address issues, business account guidance, and rider delivery issues.</p>
+          <p>If you are a customer, keep your tracking number ready. If you are a seller, keep your order ID, customer phone number, and shipment details ready.</p>
+
+          <h2>PostEx office near me for parcel tracking</h2>
+          <p>Many users visit a branch only to ask, “Where is my parcel?” But you can check this online first. Use your PostEx tracking number and check the latest update from the <a class="mini-link" href="/">PostEx tracking page</a>.</p>
+          <p>You may see statuses like booked, picked up, in transit, arrived at hub, out for delivery, delivered, on hold, or returned to shipper. If you do not understand these statuses, read our <a class="mini-link" href="/postex-tracking-status.html">PostEx delivery status guide</a>.</p>
+
+          <h2>PostEx office near me for COD orders</h2>
+          <p>PostEx is popular for cash on delivery orders. Many sellers use PostEx for COD parcels. If your COD parcel is out for delivery, keep your phone active and keep the cash ready. If the rider cannot contact you, delivery may fail or your parcel may go on hold.</p>
+          <p>If your COD parcel is late, first track it online. Then contact the seller or PostEx support. You can also read our <a class="mini-link" href="/postex-cod-tracking.html">PostEx COD tracking guide</a>.</p>
+
+          <h2>Things to check before visiting PostEx office</h2>
+          <p>Before going to a PostEx office near you, keep these things ready:</p>
+          <ul class="near-me-checklist">
+            <li>PostEx tracking number</li>
+            <li>Order number</li>
+            <li>Phone number used in order</li>
+            <li>Seller name or store name</li>
+            <li>Delivery address</li>
+            <li>Latest tracking status</li>
+            <li>CN or reference number</li>
+            <li>Return or delivery issue details</li>
+          </ul>
+
+          <h2>Why your PostEx parcel may be delayed</h2>
+          <p>A parcel can be delayed for many simple reasons. Common reasons include high parcel load, bad weather, city-to-city movement, wrong address, customer phone off, rider unable to contact customer, payment issue, parcel not picked from seller, or delay at sorting hub.</p>
+          <p>If your parcel is delayed, do not panic. Track your order first. If there is no update for 2 to 3 working days, contact the seller or PostEx support.</p>
+
+          <h2>PostEx near me vs online tracking</h2>
+          <p>You do not always need to visit a PostEx office. For normal parcel updates, online tracking is faster. Visit a branch only if your parcel is stuck for many days, your parcel is on hold, you need to return a parcel, you have a delivery complaint, or you are a seller and need pickup help.</p>
+          <p>For simple tracking, use the online tool from home. You can also check other courier guides like <a class="mini-link" href="/postex-tracking-status.html">PostEx status guide</a>, <a class="mini-link" href="/postex-cod-tracking.html">COD tracking</a>, and <a class="mini-link" href="/postex-shipping-guide.html">shipping guide</a>.</p>
+        </article>
+
+        <aside class="sidebar-box">
+          <h3>Explore More</h3>
+          <a href="/">PostEx tracking tool</a>
+          <a href="/postex-tracking-status.html">PostEx tracking status meanings</a>
+          <a href="/postex-cod-tracking.html">PostEx COD tracking guide</a>
+          <a href="/postex-shipping-guide.html">PostEx shipping guide</a>
+          <a href="/keyword-cluster.html">Keyword cluster plan</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section faq">
+      <span class="section-kicker">FAQs</span>
+      <h2>PostEx office near me FAQs</h2>
+      <details open>
+        <summary>How can I find a PostEx office near me?</summary>
+        <p>Open Google Maps and search “PostEx near me.” You can also search with your city name, like “PostEx office Lahore” or “PostEx office Karachi.”</p>
+      </details>
+      <details>
+        <summary>Do I need to visit PostEx office to track my parcel?</summary>
+        <p>No. You can track your parcel online with your PostEx tracking number. Visit the office only if your issue is not solved online or through support.</p>
+      </details>
+      <details>
+        <summary>What should I take to a PostEx office?</summary>
+        <p>Keep your tracking number, order number, phone number, seller name, and delivery address with you. This helps support find your parcel faster.</p>
+      </details>
+      <details>
+        <summary>Can PostEx office help with delayed parcels?</summary>
+        <p>Yes, support may help you check the parcel status. But it is better to contact the seller first if you bought from an online store.</p>
+      </details>
+      <details>
+        <summary>What does PostEx on hold mean?</summary>
+        <p>It usually means there is a delivery issue. The issue can be wrong address, no contact with customer, failed delivery, or payment problem.</p>
+      </details>
+      <details>
+        <summary>Can I send a parcel from PostEx office?</summary>
+        <p>PostEx mainly works with ecommerce sellers and businesses. If you want to send a parcel, contact PostEx support or visit the nearest office for current service details.</p>
+      </details>
     </section>
   </main>
-  <footer class="site-footer"><div class="footer-inner"><div><a class="brand" href="/"><span class="brand-mark">P</span><span>PostEx Tracking</span></a><p>City-wise PostEx service help for Pakistan.</p></div><div><a href="/">Track parcel</a><a href="/postex-tracking-status.html">Status guide</a></div><div><a href="/postex-cod-tracking.html">COD tracking</a><a href="/keyword-cluster.html">Keywords</a></div></div></footer>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <a class="brand" href="/"><span class="brand-mark">P</span><span>PostEx Tracking</span></a>
+        <p>City-wise PostEx service help for Pakistan. This site is an independent tracking helper and is not the official PostEx website.</p>
+      </div>
+      <div>
+        <h3>Tracking</h3>
+        <a href="/">Track parcel</a>
+        <a href="/postex-tracking-status.html">Status guide</a>
+        <a href="/postex-cod-tracking.html">COD tracking</a>
+      </div>
+      <div>
+        <h3>Resources</h3>
+        <a href="/postex-shipping-guide.html">Shipping guide</a>
+        <a href="/keyword-cluster.html">Keywords</a>
+      </div>
+    </div>
+  </footer>
+
   <script src="/assets/app.js" defer></script>
 </body>
 </html>
